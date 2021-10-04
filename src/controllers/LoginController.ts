@@ -1,10 +1,12 @@
-import { Router, Request, Response, NextFunction } from 'express';
-import { get } from './decorators/routes';
+import { Request, Response } from 'express';
+import { get, controller } from './decorators';
+// import { get } from './decorators/routes';
+// import { controller } from './decorators/controller';
 
-@controller('/')
+@controller('/auth')
 class LoginController {
   @get('/login')
-  getLogin(req: Request, res: Response): void{
+  getLogin(req: Request, res: Response): void {
     res.send(`
     <form method="POST">
       <div>
@@ -18,5 +20,5 @@ class LoginController {
       <button>Submit</button>
     </form>
     `);
-  });
+  }
 }
