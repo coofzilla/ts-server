@@ -1,5 +1,6 @@
 import { Request, Response } from 'express';
-import { get, controller } from './decorators';
+import { get, controller, use } from './decorators';
+
 // import { get } from './decorators/routes';
 // import { controller } from './decorators/controller';
 
