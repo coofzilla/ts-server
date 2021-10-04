@@ -12,19 +12,6 @@ function requireAuth(req: Request, res: Response, next: NextFunction): void {
 
 const router = Router();
 
-
-
-router.post('/login', (req: Request, res: Response) => {
-  const { email, password } = req.body;
-
-  if (email && password && email === 'email' && password === 'password') {
-    req.session = { loggedIn: true };
-    res.redirect('/');
-  } else {
-    res.send('invalid email or password');
-  }
-});
-
 router.get('/', (req: Request, res: Response) => {
   if (req.session && req.session.loggedIn) {
     res.send(`
